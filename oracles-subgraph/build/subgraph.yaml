@@ -1,0 +1,148 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: LinkPoolOracle
+    network: mainnet
+    source:
+      address: "0x240BaE5A27233Fd3aC5440B5a598467725F7D1cd"
+      abi: OracleContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - OracleRequest
+        - CancelOracleRequest
+      abis:
+        - name: OracleContract
+          file: LinkPoolOracle/abis/OracleContract.json
+      eventHandlers:
+        - event: OracleRequest(indexed
+            bytes32,address,bytes32,uint256,address,bytes4,uint256,uint256,bytes)
+          topic0: "0xd8d7ecc4800d25fa53ce0372f13a416d98907a7ef3d8d3bdd79cf4fe75529c65"
+          handler: handleOracleRequest
+        - event: CancelOracleRequest(indexed bytes32)
+          handler: handleCancelOracleRequest
+      file: LinkPoolOracle/LinkPoolOracle.wasm
+  - kind: ethereum/contract
+    name: ChainLayerOracle
+    network: mainnet
+    source:
+      address: "0xF5a3d443FccD7eE567000E43B23b0e98d96445CE"
+      abi: OracleContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - OracleRequest
+        - CancelOracleRequest
+      abis:
+        - name: OracleContract
+          file: ChainLayerOracle/abis/OracleContract.json
+      eventHandlers:
+        - event: OracleRequest(indexed
+            bytes32,address,bytes32,uint256,address,bytes4,uint256,uint256,bytes)
+          topic0: "0xd8d7ecc4800d25fa53ce0372f13a416d98907a7ef3d8d3bdd79cf4fe75529c65"
+          handler: handleOracleRequest
+        - event: CancelOracleRequest(indexed bytes32)
+          handler: handleCancelOracleRequest
+      file: LinkPoolOracle/LinkPoolOracle.wasm
+  - kind: ethereum/contract
+    name: FiewsOracle
+    network: mainnet
+    source:
+      address: "0x049Bd8C3adC3fE7d3Fc2a44541d955A537c2A484"
+      abi: OracleContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - OracleRequest
+        - CancelOracleRequest
+      abis:
+        - name: OracleContract
+          file: FiewsOracle/abis/OracleContract.json
+      eventHandlers:
+        - event: OracleRequest(indexed
+            bytes32,address,bytes32,uint256,address,bytes4,uint256,uint256,bytes)
+          topic0: "0xd8d7ecc4800d25fa53ce0372f13a416d98907a7ef3d8d3bdd79cf4fe75529c65"
+          handler: handleOracleRequest
+        - event: CancelOracleRequest(indexed bytes32)
+          handler: handleCancelOracleRequest
+      file: LinkPoolOracle/LinkPoolOracle.wasm
+  - kind: ethereum/contract
+    name: SimplyVCOracle
+    network: mainnet
+    source:
+      address: "0x8cfb1D4269f0daa003CDEa567aC8f76c0647764a"
+      abi: OracleContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - OracleRequest
+        - CancelOracleRequest
+      abis:
+        - name: OracleContract
+          file: SimplyVCOracle/abis/OracleContract.json
+      eventHandlers:
+        - event: OracleRequest(indexed
+            bytes32,address,bytes32,uint256,address,bytes4,uint256,uint256,bytes)
+          topic0: "0xd8d7ecc4800d25fa53ce0372f13a416d98907a7ef3d8d3bdd79cf4fe75529c65"
+          handler: handleOracleRequest
+        - event: CancelOracleRequest(indexed bytes32)
+          handler: handleCancelOracleRequest
+      file: LinkPoolOracle/LinkPoolOracle.wasm
+  - kind: ethereum/contract
+    name: NewRoadOracle
+    network: mainnet
+    source:
+      address: "0xF3b450002C7Bc300eA03c9463d8E8BA7f821b7c6"
+      abi: OracleContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - OracleRequest
+        - CancelOracleRequest
+      abis:
+        - name: OracleContract
+          file: NewRoadOracle/abis/OracleContract.json
+      eventHandlers:
+        - event: OracleRequest(indexed
+            bytes32,address,bytes32,uint256,address,bytes4,uint256,uint256,bytes)
+          topic0: "0xd8d7ecc4800d25fa53ce0372f13a416d98907a7ef3d8d3bdd79cf4fe75529c65"
+          handler: handleOracleRequest
+        - event: CancelOracleRequest(indexed bytes32)
+          handler: handleCancelOracleRequest
+      file: LinkPoolOracle/LinkPoolOracle.wasm
+  - kind: ethereum/contract
+    name: ProphetOracle
+    network: mainnet
+    source:
+      address: "0x38b6ab6B9294CCe1Ccb59c3e7D390690B4c18B1A"
+      abi: OracleContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - OracleRequest
+        - CancelOracleRequest
+      abis:
+        - name: OracleContract
+          file: ProphetOracle/abis/OracleContract.json
+      eventHandlers:
+        - event: OracleRequest(indexed
+            bytes32,address,bytes32,uint256,address,bytes4,uint256,uint256,bytes)
+          topic0: "0xd8d7ecc4800d25fa53ce0372f13a416d98907a7ef3d8d3bdd79cf4fe75529c65"
+          handler: handleOracleRequest
+        - event: CancelOracleRequest(indexed bytes32)
+          handler: handleCancelOracleRequest
+      file: LinkPoolOracle/LinkPoolOracle.wasm

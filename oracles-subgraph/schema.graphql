@@ -1,0 +1,17 @@
+type JobEntity @entity {
+	id: ID!
+  specId: Bytes
+  requester: Bytes! # contract address
+	payment: BigInt!
+	timestamp: BigInt!
+  block: BigInt!
+	data: Bytes # job params
+	completed: Boolean
+  node: NodeEntity!
+}
+
+type NodeEntity @entity {
+	id: ID!
+	address: Bytes! # oracle contract
+	jobs: [JobEntity!] @derivedFrom(field: "node")
+}
